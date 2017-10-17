@@ -1,0 +1,99 @@
+.modal-content {
+	width: 100%;
+    height: 560px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.person_desc {
+	margin-left: 45px;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.header {
+	background-color: #009688;
+}
+
+.profile_edit {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.title_name_edit_profile {
+	font-size: 12px;
+	font-family: HelveticaNeueBd;
+	color: #002960;
+}
+
+.mug_shot_edit {
+	margin-left: 36%;
+    margin-top: 20px;
+}
+
+
+
+.data_to_change input {
+	display: block;
+	height: 30px;
+	outline: none;
+	width: 290px;
+	height: 30px;
+	margin-bottom: 30px;
+	margin-left: 45px;
+	margin-top: 20px;
+}
+
+
+.header div {
+	margin-top: 15px;
+	text-align: center;
+	height: 50px;
+	color: white;
+	font-size: 24px;
+	font-family: HelveticaNeueRoman;
+}
+
+::-webkit-input-placeholder{
+	font-size: 14px;
+	color: #002960;
+	font-family: HelveticaNeueRoman;
+}
+
+.label {
+	position: absolute;
+    top: 77%;
+    left: 12%;
+}
+
+.cancel {
+	color: #009688;
+	font-size: 1em;
+	background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    float: right;
+    margin-right: 14px;
+    font-family: HelveticaNeueRoman;
+
+}
+
+.save {
+    background-color: #009688;
+    color: white;
+    border: none;
+    float: right;
+    width: 90px;
+    height: 30px;
+    font-size: 14px;
+    outline: none;
+    font-family: HelveticaNeueRoman;
+}
+
+.modal-footer>:not(:last-child) {
+	margin-right: 10px;
+}

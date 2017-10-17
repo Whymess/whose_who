@@ -1,0 +1,95 @@
+.header_main {
+	position: relative;
+  background:  
+      linear-gradient(
+      rgba(3, 143, 132, 0.90), 
+       rgba(3, 143, 132, 0.90)
+    ),
+  url("../Assets/Images/backdrop_sub_header.png");
+  background-repeat: no-repeat;
+  max-width: 100%;
+  height: 33%;
+  margin-top: 12px;
+}
+
+
+
+.title {
+  color: white;
+    font-family: HelveticaNeueMedium;
+    margin-left: 1em;
+    padding-top: 1.5em;
+    padding-bottom: .8em;
+    font-size: 3.000em;
+}
+
+.company_data_grid {
+   display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.industry_pratice_title {
+  font-size: 30px;
+  margin-left: 1.8em;
+  color: white;
+  font-family: HelveticaNeueRoman;
+}
+
+.pratice_info  {
+  color: white;
+  font-family: HelveticaNeueMedium;
+  font-size: 22px;
+}
+
+.about_the_client {
+  font-family: HelveticaNeueRoman;
+  color: white;
+  font-size: 22px;
+  margin-left: 2.500em;
+  margin-right: 2.500em;
+}
+
+.first_row {
+  font-size: 1.875em;
+  color: white;
+}
+
+.Objective {
+  margin-left: 2.500em;
+  font-size: 24px;
+  font-family: HelveticaNeueBd;
+}
+
+.second_row {
+  margin-top: 2.500em;
+  color: white;
+  font-size: 1.5em;
+}
+
+.description {
+  font-size: 22px;
+  color: white;
+  margin-left: 2.8em;
+
+}
+
+.address_two, .address_one {
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.address_one {
+    margin-left: 1em;
+}
+
+.boxFiles, .know {
+  color: white;
+  font-size: 24px;
+  font-family: HelveticaNeueBd;
+}
+
+.boxFiles {
+  margin-top: 30px;
+}

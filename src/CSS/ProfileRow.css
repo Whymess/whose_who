@@ -1,0 +1,9 @@
+.user_profiles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    bottom: 6%;
+}
+
+
