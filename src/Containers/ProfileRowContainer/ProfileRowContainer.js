@@ -10,7 +10,6 @@ import {UserProfile} from '../../Actions/EditProfile';
 const ProfileRowContainer = (props) => {
 		
    return (
-
     	<ProfileRow {...props}/>
     )
 }
