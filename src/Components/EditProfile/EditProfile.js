@@ -42,7 +42,6 @@ export default class EditProfile extends Component {
       <div className="modal-content">
          <div className="header">
               <div> Edit Profile </div>
-            }
          </div>
          <div className="modal-body">
               <div className="profile_edit">
