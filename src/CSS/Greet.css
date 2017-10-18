@@ -1,8 +1,26 @@
 .Greet_person {
-	margin-top: 25px;
-	font-size: 20px;
-	color: #002960;
-	position: relative;
+font-size: 20px;
+    color: #002960;
+    position: relative;
     left: 92%;
+    bottom: 31px;
+}
+
+.main_teamLogo {
+  width: 10%;
+    margin-top: 3px;
+    margin-left: 1%;
+}
+
+.top_greeting {
+	height: 4%;
+}
+
+.teamName {
+  color: #002960;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 26px;
 }
 
