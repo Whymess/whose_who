@@ -7,8 +7,8 @@ import { bindActionCreators } from 'redux';
 import {ProfileRow} from '../../Components/index';
 import {UserProfile} from '../../Actions/EditProfile';
 
+
 const ProfileRowContainer = (props) => {
-		
    return (
     	<ProfileRow {...props}/>
     )

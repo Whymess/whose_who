@@ -3,18 +3,23 @@ import {Profile} from '../../Components/index';
 import '../../CSS/ProfileRow.css';
 
 
+
 export default class ProfileRow extends Component {
 
+
+	
 	  findUserProfile = (index) => {
 	  	 this.props.UserProfile(index, this.props.DefaultUsers)
 	  }
 
 	 render(){
-  
+      const {DefaultUsers} = this.props;
+
   	  return (
         <div className="user_profiles"> 
         	  {
-	 	this.props.DefaultUsers.map((user, index) => {
+       // Iterates over the user list and creates a unique profie for each indiviudal. 
+	 	DefaultUsers.map((user, index) => {
 
 	 		return <Profile
 	 				findAndEditThisUser={e => this.findUserProfile(index)}

@@ -6,8 +6,8 @@ import _ from 'lodash';
 // local dependencies
 import {USER_PROFILE, EDIT_USER_PROFILE, UPDATE_PHOTO} from '../../Constants/index';
 
-// Must be a better way to do this..
-// var initState = DefaultUsers()
+
+// Can I make default state into an annoymous function that returns...? 
 import {defaultState} from '../../Reducers/InitalState/InitalState';
 
 // reducer
@@ -49,13 +49,14 @@ export default (state = defaultState, action) => {
           DefaultUsers:currentUsers
       });
 
-     case UPDATE_PHOTO:
-        console.log(payload)
+      // Need to implement
+     // case UPDATE_PHOTO:
+     //    console.log(payload)
 
 
-     return assign({}, state, {
+     // return assign({}, state, {
          
-      });
+     //  });
 
     default:
       return state

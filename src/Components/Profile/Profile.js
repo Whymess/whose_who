@@ -1,28 +1,31 @@
 import React, {Component} from 'react';
 import '../../CSS/Profile.css';
 
+// Unqiue profile for each user listed. findAndEditThisUser an event handler that locates the user via index number. 
 
 export default class Profile extends Component {
 
 	render(){
-	
+	const {findAndEditThisUser, title, name, city, phone, email, EA, favQoute,
+			funFact} = this.props;
 	return (
 		<div className="profile">
+			{/* How do you get around using the require statement???? */}
 			<img alt="mug shot" src={require('../../Assets/Photos/Four.png')} />
-		    <div className="user_title">{this.props.title}</div> 
-		    <div className="user_name">{this.props.name}
+		    <div className="user_title">{title}</div> 
+		    <div className="user_name">{name}
 
-		    <span className="user_local">, {this.props.city}</span>
+		    <span className="user_local">, {city}</span>
 		    </div>
 
-		    <div className="user_phone">{this.props.phone}</div>
-		    <div className="user_email">{this.props.email}</div>
-		    <div className="user_ea"> EA: {this.props.EA} </div> 
-		    <div className="user_qoute">{this.props.favQoute}</div>
-		    <div className="user_funFact">{this.props.funFact}</div>
+		    <div className="user_phone">{phone}</div>
+		    <div className="user_email">{email}</div>
+		    <div className="user_ea"> EA: {EA} </div> 
+		    <div className="user_qoute">{favQoute}</div>
+		    <div className="user_funFact">{funFact}</div>
 		     <a className="KnowProfile" href="KNowing">Know</a>
 		   <a>
-          	  <i onClick={e => this.props.findAndEditThisUser(this.props.index)}
+          	  <i onClick={e => findAndEditThisUser()}
           	  	data-toggle="modal" data-target="#myModal"
           	  	className="fa fa-pencil"></i>
            </a>

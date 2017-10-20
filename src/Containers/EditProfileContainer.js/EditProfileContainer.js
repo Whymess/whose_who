@@ -1,5 +1,5 @@
 // Dependencies
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import React from 'react';
 import { bindActionCreators } from 'redux';
 
@@ -23,7 +23,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
 	EditUserProfile: EditUserProfile,
-  // UpdatePhoto: UpdatePhoto
 }, dispatch);
 
 export default connect(

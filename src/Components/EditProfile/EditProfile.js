@@ -10,15 +10,18 @@ export default class EditProfile extends Component {
     imagePreviewUrl: ''
   }
 
+  // Saves what is typed into input into state 
   handlefavQouteChange = (e) => {
     this.setState({favQoute: e.target.value});
   }
 
+  // Saves what is typed into input into state 
   handlefunFactChange = (e) => {
     this.setState({funFact: e.target.value});
   }
 
   // #Can this be done better? 
+  // Clears form
   componentWillReceiveProps(nextProps){
       this.setState({favQoute: ''});
       this.setState({funFact: ''});
@@ -26,10 +29,10 @@ export default class EditProfile extends Component {
 
   updateDataAboutUser = (e) => {
       e.preventDefault(e)
-      let IndexUserToModify = this.props.indexNumberOfUser
+      const {indexNumberOfUser } = this.props;
       let newfavQoute = this.state.favQoute
       let newfunFact = this.state.funFact
-      this.props.EditUserProfile(IndexUserToModify,newfavQoute, newfunFact)
+      this.props.EditUserProfile(indexNumberOfUser,newfavQoute, newfunFact)
   } 
 
 
@@ -45,13 +48,12 @@ export default class EditProfile extends Component {
          </div>
          <div className="modal-body">
               <div className="profile_edit">
+
                <input id="myInput" type="file" onChange={e => this.newPhoto(e)}
 
                 ref={(ref) => this.upload = ref} style={{ display: 'none' }} />
 
                <img className="mug_shot_edit" alt="mug shot" src={defaultImage} 
-
-
                onClick={(e) => this.upload.click() }
                />
               <div className="person_desc">
