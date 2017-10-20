@@ -13,7 +13,7 @@ export const EditUserProfile = (IndexUserToModify, newfavQoute, newfunFact) => {
 }
 
 
-// Not yet implemented.
+// Not yet implemented. ingore this
 export const UpdatePhoto = (file) => {
 	return{
 		type: 'UPDATE_PHOTO',
