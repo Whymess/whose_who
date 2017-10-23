@@ -1,9 +1,10 @@
 .Greet_person {
-font-size: 20px;
+    font-size: 20px;
     color: #002960;
     position: relative;
-    left: 92%;
-    bottom: 31px;
+    left: 65%;
+    width: auto;
+    display: inline-block;
 }
 
 .main_teamLogo {

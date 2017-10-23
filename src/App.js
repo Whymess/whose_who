@@ -8,18 +8,63 @@ import {
   ProfileRowContainer,
   EditProfileContainer
 } from './Containers/index';
-	
+
+import { auth, database } from './firebase';
+import pick from 'lodash/pick';
+import map from 'lodash/map';
+
 import './CSS/Normalize.css';
 
-// import axios from 'axios';
-
-
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      user: ''
+    }
+    
+  }
+
+
+  componentDidMount() {
+    auth.onAuthStateChanged((user) => {
+      if(user) {
+        this.usersRef = database.ref('/users')
+        this.userRef = this.usersRef.child(user.uid)
+
+        this.userRef.once('value').then((snapshot) => {
+            if(snapshot.val()) return;
+
+            const userData = pick(user, ['displayName', 'photoURL', 'email']);
+            this.setState({user: userData})
+           
+        });
+   
+       // this.usersRef.on('value', (snapshot) => {
+       //    this.setState({user: snapshot.val()});
+       // });
+      }
+    });
+
+
+   
+  }
+
 
   render() {
+    const { displayName } = this.state.user;
+
     return (
       <div className="Main">
-      	<TopGreeting/>
+      {
+        displayName 
+          ?
+          <TopGreeting displayName={displayName}/>
+       : 
+        <TopGreeting/>
+      }
+
+
         <Header/>
         <MidGreeting/>
         <ProfileRowContainer/>
