@@ -1,15 +1,20 @@
 import React, {Component} from 'react';
 import '../../CSS/EditProfile.css'
 import defaultImage from '../../Assets/Photos/Four.png';
+import { storage, database } from '../../firebase';
 
 export default class EditProfile extends Component {
-  state = {
-    favQoute: '',
-    funFact: '',
-    file: '',
-    imagePreviewUrl: ''
-  }
+  constructor(props) {
+    super(props);
+    this.state = {
+      favQoute: '',
+      funFact: '',
+      file: '',
+      imagePreviewUrl: ''
+    }
 
+
+  }
   // Saves what is typed into input into state 
   handlefavQouteChange = (e) => {
     this.setState({favQoute: e.target.value});
@@ -29,11 +34,16 @@ export default class EditProfile extends Component {
 
   updateDataAboutUser = (e) => {
       e.preventDefault(e)
-      const {indexNumberOfUser } = this.props;
+      let {indexNumberOfUser } = this.props;
       let newfavQoute = this.state.favQoute
       let newfunFact = this.state.funFact
       this.props.EditUserProfile(indexNumberOfUser,newfavQoute, newfunFact)
   } 
+
+  newPhoto = (e) => {
+      let file = e.target.files[0];
+
+  }
 
 
 

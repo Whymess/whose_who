@@ -1,6 +1,6 @@
 
 // Local Depn
-import App from './App';
+import App from './Components/App/App';
 import './CSS/Base.css';
 import store from './store';
 

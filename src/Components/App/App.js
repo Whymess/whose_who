@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import {Header, 
 		TopGreeting, 
 		MidGreeting, 
-	} from './Components/index';
+	} from '../../Components/index';
 
 import {
   ProfileRowContainer,
   EditProfileContainer
-} from './Containers/index';
+} from '../../Containers/index';
 
-import { auth, database } from './firebase';
+import { auth, database } from '../../firebase';
 import pick from 'lodash/pick';
 import map from 'lodash/map';
 
-import './CSS/Normalize.css';
+import '../../CSS/Normalize.css';
 
 class App extends Component {
   constructor(props) {
@@ -34,8 +34,9 @@ class App extends Component {
 
         this.userRef.once('value').then((snapshot) => {
             if(snapshot.val()) return;
+            console.log(user, "user")
 
-            const userData = pick(user, ['displayName', 'photoURL', 'email']);
+            const userData = pick(user, ['displayName', 'photoURL', 'email', 'uid']);
             this.setState({user: userData})
            
         });
@@ -52,7 +53,7 @@ class App extends Component {
 
 
   render() {
-    const { displayName } = this.state.user;
+    const { displayName, photoURL, emailuid } = this.state.user;
 
     return (
       <div className="Main">
