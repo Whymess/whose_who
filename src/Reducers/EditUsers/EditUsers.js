@@ -50,13 +50,24 @@ export default (state = defaultState, action) => {
       });
 
       // Need to implement
-     // case UPDATE_PHOTO:
-     //    console.log(payload)
+     case UPDATE_PHOTO:
+        let newProfilePhoto = payload[0];
+        let IndexNumOfUser = payload[1];
+  
+
+        var currentUsers = state.DefaultUsers.slice()
+          
+          _.forEach(currentUsers, function(value, key) {
+                if(IndexNumOfUser === key){
+                    value['photo'] = newProfilePhoto
+                
+                }
+          });
 
 
-     // return assign({}, state, {
-         
-     //  });
+     return assign({}, state, {
+           DefaultUsers:currentUsers
+      });
 
     default:
       return state

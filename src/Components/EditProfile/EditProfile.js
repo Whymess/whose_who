@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import '../../CSS/EditProfile.css'
-import defaultImage from '../../Assets/Photos/Four.png';
 import { storage, database } from '../../firebase';
 
 export default class EditProfile extends Component {
@@ -13,7 +12,8 @@ export default class EditProfile extends Component {
       imagePreviewUrl: ''
     }
 
-
+     this.storageRef = storage.ref('/user-images');
+     this.userRef = database.ref('/users')
   }
   // Saves what is typed into input into state 
   handlefavQouteChange = (e) => {
@@ -30,6 +30,7 @@ export default class EditProfile extends Component {
   componentWillReceiveProps(nextProps){
       this.setState({favQoute: ''});
       this.setState({funFact: ''});
+      this.setState({uploadedUrl: ''})
   }
 
   updateDataAboutUser = (e) => {
@@ -41,7 +42,27 @@ export default class EditProfile extends Component {
   } 
 
   newPhoto = (e) => {
-      let file = e.target.files[0];
+    var _this = this
+    const file = e.target.files[0];
+    const uploadTask = this.storageRef
+                      .child(file.name)
+                      .put(file, {contentType: file.type});
+
+    uploadTask.then((snapshot) => {
+
+         console.log(snapshot)
+       
+         this.userRef.child('/photoURL').set(snapshot.downloadURL);
+
+         return snapshot.downloadURL
+    
+      
+    }).then(function(url) {
+        let {indexNumberOfUser } = _this.props;
+        _this.props.UpdatePhoto(url,indexNumberOfUser)
+    
+     })
+
 
   }
 
@@ -63,7 +84,7 @@ export default class EditProfile extends Component {
 
                 ref={(ref) => this.upload = ref} style={{ display: 'none' }} />
 
-               <img className="mug_shot_edit" alt="mug shot" src={defaultImage} 
+               <img className="mug_shot_edit" alt="mug shot" src={this.props.EditUser.modalUser.photo} 
                onClick={(e) => this.upload.click() }
                />
               <div className="person_desc">

@@ -7,11 +7,10 @@ export default class Profile extends Component {
 
 	render(){
 	const {findAndEditThisUser, title, name, city, phone, email, EA, favQoute,
-			funFact} = this.props;
+			funFact, photo} = this.props;
 	return (
 		<div className="profile">
-			{/* How do you get around using the require statement???? */}
-			<img alt="mug shot" src={require('../../Assets/Photos/Four.png')} />
+			<img className="mug_shot" alt="mug shot" src={photo} />
 		    <div className="user_title">{title}</div> 
 		    <div className="user_name">{name}
 

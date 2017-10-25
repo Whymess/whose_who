@@ -31,5 +31,12 @@ a {
 	color: #187EF0;
 }
 
+.mug_shot {
+	    border-style: none;
+    -webkit-border-radius: 50px;
+    width: 57%;
+}
+
+
 
 

@@ -27,34 +27,32 @@ class App extends Component {
 
 
   componentDidMount() {
-    auth.onAuthStateChanged((user) => {
-      if(user) {
-        this.usersRef = database.ref('/users')
-        this.userRef = this.usersRef.child(user.uid)
+    // auth.onAuthStateChanged((user) => {
+    //   if(user) {
+    //     this.usersRef = database.ref('/users')
+    //     this.userRef = this.usersRef.child(user.uid)
 
-        this.userRef.once('value').then((snapshot) => {
-            if(snapshot.val()) return;
-            console.log(user, "user")
-
-            const userData = pick(user, ['displayName', 'photoURL', 'email', 'uid']);
-            this.setState({user: userData})
-           
-        });
+    //     this.userRef.once('value').then((snapshot) => {
+    //         if(snapshot.val()) return;
+    //         const userData = pick(user, ['displayName', 'photoURL', 'email', 'uid']);
+    //         this.userRef.set(userData);
+    //         this.setState({user: userData})
+    //         this.props.LoginUser(userData) 
+    //     });
    
-       // this.usersRef.on('value', (snapshot) => {
-       //    this.setState({user: snapshot.val()});
-       // });
-      }
-    });
+    //    // this.usersRef.on('value', (snapshot) => 
+    //    //    this.props.ListOfUsers() 
+    //    // });
+    //   }
+    // });
 
-
-   
   }
 
 
   render() {
-    const { displayName, photoURL, emailuid } = this.state.user;
 
+    const { displayName } = this.state.user;
+   
     return (
       <div className="Main">
       {

@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 // local dependencies
 import {EditProfile} from '../../Components/index';
 
-import {EditUserProfile } from '../../Actions/EditProfile';
+import {EditUserProfile, UpdatePhoto } from '../../Actions/EditProfile';
 
 const EditProfileContainer = (props) => {
    return (
@@ -23,6 +23,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
 	EditUserProfile: EditUserProfile,
+  UpdatePhoto: UpdatePhoto
 }, dispatch);
 
 export default connect(

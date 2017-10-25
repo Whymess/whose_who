@@ -28,10 +28,12 @@
 }
 
 .mug_shot_edit {
-	margin-left: 36%;
-    margin-top: 20px;
+	border-style: none;
+    -webkit-border-radius: 50px;
+    width: 160px;
+    margin: 0 auto;
+    display: block;
 }
-
 
 
 .data_to_change input {

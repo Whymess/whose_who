@@ -13,10 +13,9 @@ export const EditUserProfile = (IndexUserToModify, newfavQoute, newfunFact) => {
 }
 
 
-// Not yet implemented. ingore this
-export const UpdatePhoto = (file) => {
+export const UpdatePhoto = (link, IndexUserToModify) => {
 	return{
 		type: 'UPDATE_PHOTO',
-		payload: file
+		payload: [link,IndexUserToModify]
 	}
 }

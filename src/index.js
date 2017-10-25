@@ -1,6 +1,6 @@
 
-// Local Depn
-import App from './Components/App/App';
+// Local Denpendenices
+import {AppContainer} from './Containers/index';
 import './CSS/Base.css';
 import store from './store';
 
@@ -12,7 +12,7 @@ import { Provider } from 'react-redux';
 
 render(
 	<Provider store={store}>
-   		 <App />
+   		 <AppContainer />
   	</Provider>,
 
   document.getElementById('root')

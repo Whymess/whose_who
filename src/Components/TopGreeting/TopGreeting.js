@@ -15,7 +15,7 @@ export default (props) => {
 		  		<div 
 		  			className="Greet_person"
 		  			onClick={() => auth.signInWithPopup(googleAuthProvider)}
-		  			> Hi, {firstNameOnly || 'Hi'
+		  			> Hi, {firstNameOnly 
 
 		  			}</div>
 	 		</div>
